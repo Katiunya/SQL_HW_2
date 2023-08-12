@@ -11,7 +11,7 @@ CREATE TABLE sales (
   
   /* Заполняем таблицу. */
   
-    INSERT sales (
+INSERT sales (
   order_date, count_product) 
 VALUES 
   ("2022-01-01", 156),
@@ -34,7 +34,7 @@ FROM sales;
 
 SELECT id, count_product, -- Перед CASE ставится запятая
 CASE
-	WHEN count_product < 100 THEN "Маленький заказ"
+    WHEN count_product < 100 THEN "Маленький заказ"
     WHEN count_product BETWEEN 100 AND 300 THEN "Средний заказ"
     ELSE "Большой заказ"
 END AS "Тип заказа"
@@ -67,7 +67,7 @@ ADD full_order_status VARCHAR(45); -- добавили столбец
 
 SELECT id, employee_id, amount, order_status, 
 CASE
-	WHEN order_status = "OPEN" THEN "Order is in open state"
+    WHEN order_status = "OPEN" THEN "Order is in open state"
     WHEN order_status = "CLOSED" THEN "Order is closed"
     ELSE "Order is cancelled"
 END AS full_order_status
